@@ -6,9 +6,9 @@ public class MenuManager : MonoBehaviour
     [Header("玩家資料")]
     public PlayerData dataPlayer;
 
-    public void BuyHp_500()
+    public void BuyHp_100()
     {
-        dataPlayer.maxHp += 500;
+        dataPlayer.maxHp += 100;
         dataPlayer.hp = dataPlayer.maxHp;
     }
 
