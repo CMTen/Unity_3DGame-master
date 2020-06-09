@@ -14,6 +14,7 @@ public class LevelMananger : MonoBehaviour
     private Animator aniDoor;          // 門 (動畫)
     private Image imgCross;
     private AdManager adManager;
+    private Player player;
 
     [Header("是否自動顯示技能")]
     public bool autoShowSkill;         // 是否顯示技能
@@ -23,6 +24,7 @@ public class LevelMananger : MonoBehaviour
     public GameObject panelRevival;
 
     public Button btnRevival;
+    public Button btnReplay;
 
 
     private void Start()
@@ -45,7 +47,9 @@ public class LevelMananger : MonoBehaviour
         // InvokeRepeating("OpenDoor", 0, 1.5f);
 
         adManager = FindObjectOfType<AdManager>();
+        player = FindObjectOfType<Player>();
         btnRevival.onClick.AddListener(adManager.ShowADRevival);
+        btnReplay.onClick.AddListener(player.Revival);
     }
 
     /// <summary>
